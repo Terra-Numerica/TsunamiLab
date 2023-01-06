@@ -1,2 +1,0 @@
-﻿cd C:\Users\jgalazmo\Desktop\TsunamiLab\tsunami-leap\websocket
-powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '$env:ANACONDA_HOME\shell\condabin\conda-hook.ps1' ; conda activate '$env:ANACONDA_HOME' ; python -m http.server"

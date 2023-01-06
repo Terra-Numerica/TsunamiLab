@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LeapMotion</title>
+  <style>
+
+    body{
+      background-color: black;
+      overflow:hidden;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    #simulation {
+      transform:translate(-100%,25%);
+      opacity: 0.1;
+      left:0;
+      top:0;
+    }
+
+    #canvas-container{
+      position:absolute;
+      transform:translate(-50%,-50%);
+      left:50%;
+      top:50%;
+      z-index:99;
+    }
+  
+    #plot {
+      /* border:1px solid;
+      border-color: white; */
+      z-index:9999;
+    }
+
+    #globe {
+      position:absolute;
+      top:5.3%;
+      left:50%;
+      transform: translate(-50%, 0%);
+    }
+
+    #leap-info{
+      color:white;
+      display:none;
+    }
+
+    #mask{
+      height:100%;
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,0%);
+      opacity:0.8;
+      display:none;
+    }
+
+    #clock{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,0%);
+      color:white;
+      background-color:black;
+      font-size:2em;
+      margin-top: 0.1%;
+    }
+
+    #magnitude{
+      position:absolute;
+      top: 0%;
+      left: 50%;
+      transform:translate(-495%,436%) rotate(-30deg);
+      color:white;
+      background-color:black;
+      font-size:1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="clock">
+    <strong>12h 5m </strong> 
+  </div>
+  
+  <div id="magnitude">
+    <strong> 9.0 Mw</strong>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="plot"></canvas>  
+  </div>
+  
+  
+  <div id="leap-info">
+      <h3>Leap Motion</h3>
+      
+      <h4 id='coordinates'>Coordinates: </h4>
+      <h4 id='pinch'>Pinch: </h4>
+      <h4 id='grab'>Grab: </h4>
+      <h4 id='twopinch'>Diff Double Pinch: </h4>
+  </div>
+
+  <script src="assets/slabs.js"></script>
+
+  <script src="scripts/grabHandlersPinch.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/mousehandles.js"></script>
+  <script src="scripts/keyhandles.js"></script>
+
+
+  <script src="node_modules/three/build/three.min.js"></script>
+  <script src="scripts/OrbitControls.js"></script>
+  <canvas id="globe"></canvas>
+  <script src="scripts/globe.js"></script>
+
+  <canvas id="simulation"></canvas>
+  <script src="scripts/nami.js"></script>
+  <script src="scripts/simulation.js"></script>
+  <script src="scripts/magnitude_control.js"></script>
+  
+
+  <!--<img id="mask" src="assets/mascara_cuadrada.png"/>-->
+</body>
+
+</html>
